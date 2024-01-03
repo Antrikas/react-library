@@ -95,7 +95,11 @@ function App() {
           addItemToCart={addItemToCart} cart={cart} /> } />
             <Route path="/cart" element={<Cart books={books} cart={cart}
                changeQuantity={changeQuantity} 
-              removeItem={removeItem}/>} />
+              removeItem={removeItem}
+              totals={calcPrices}
+              />
+              } 
+              />
           
         </Routes>
       </div>
