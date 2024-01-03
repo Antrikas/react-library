@@ -80,7 +80,7 @@ function App() {
   useEffect(() => {
     console.log (cart);
   }, [cart]);
-
+  
   return (
     <Router>
       <div className="App">
