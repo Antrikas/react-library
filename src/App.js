@@ -30,7 +30,7 @@ function App() {
     );
   }
 
-  function updateCart(item, newQuantity) {
+  function changeQuantity(item, newQuantity) {
     setCart((oldCart) =>
       oldCart.map((oldItem) => {
         if (oldItem.id === item.id) {
@@ -80,7 +80,7 @@ function App() {
   useEffect(() => {
     console.log (cart);
   }, [cart]);
-  
+
   return (
     <Router>
       <div className="App">
@@ -94,12 +94,15 @@ function App() {
         <Route path="/books/:id" element={<BookInfo books={books}
           addItemToCart={addItemToCart} cart={cart} /> } />
             <Route path="/cart" element={<Cart books={books} cart={cart}
-              updateCart={updateCart} />} />
+               changeQuantity={changeQuantity} 
+              removeItem={removeItem}/>} />
           
         </Routes>
       </div>
     </Router>
   );
 }
+
+   
 
 export default App;
