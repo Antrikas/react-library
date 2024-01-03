@@ -77,10 +77,14 @@ function App() {
     };
   }
 
+  useEffect(() => {
+    console.log (cart);
+  }, [cart]);
+
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav numberOfItems={numberOfItems()}/>
         <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/books" element={<Books books={books} />} />
@@ -88,9 +92,9 @@ function App() {
             {books} />} />*/}
         
         <Route path="/books/:id" element={<BookInfo books={books}
-          addToCart={addToCart} cart={cart} /> } />
+          addItemToCart={addItemToCart} cart={cart} /> } />
             <Route path="/cart" element={<Cart books={books} cart={cart}
-              changeQuantity={changeQuantity} />} />
+              updateCart={updateCart} />} />
           
         </Routes>
       </div>
